@@ -1,0 +1,14 @@
+.background {
+    background-color: #15161A;
+}
+
+ /* The side navigation menu */
+ .sidebar {
+     margin: 0;
+     padding: 0;
+     width: 150px;
+     background-color: #33353B;
+     position: fixed;
+     height: 100%;
+     overflow: auto;
+ } 
