@@ -10,5 +10,5 @@
      background-color: #33353B;
      position: fixed;
      height: 100%;
-     overflow: auto;
- } 
+     /* overflow: auto; */
+ }
