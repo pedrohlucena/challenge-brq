@@ -5,10 +5,36 @@
  /* The side navigation menu */
  .sidebar {
      margin: 0;
-     padding: 0;
-     width: 150px;
-     background-color: #33353B;
-     position: fixed;
-     height: 100%;
+     background-color: #15161A;
+     display: flex !important;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
      /* overflow: auto; */
+ }
+
+ .map {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    filter: invert(95%);
+    display: block;
+
+ }
+ .map-container {
+    margin: 0;
+    padding: 0;
+    border: 0;
+ }
+ .widgets {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #15161A;
+    height: 30%;
+ }
+
+ .img-button {
+    max-width: 100%;
+    height: auto;
  }
