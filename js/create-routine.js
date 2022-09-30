@@ -28,31 +28,24 @@ var abreNovoCampoAcao = function(){
 //var dispositivosDisponiveis = ["Lâmpada", "TV", "Ar Condicionado", "Rádio", "Câmera"]
 
 // TODO PASSAR DISPOSITIVOS DISPONÍVEIS PARA DENTRO DE UMA LISTA, REMOVER ITEMS CONFORME A LISTA É USADA
-/*var botaoExcluirExiste = false;
-var excluiUltimoDispositivo = function(){
-    console.log(document.getElementById("selecao_dispositivos").childNodes);
-    document.getElementById("dispositivo" + contagemDispositivos--).remove();
-    document.getElementById("botao_exclui_dispositivo" + contagemDispositivos--).remove();
-    botaoExcluirExiste = false;
-}
-*/
-//var contagemDispositivos = 0;
-//CRIA MAIS CAMPOS PARA SELECIONAR DISPOSITIVO NO FORMULÁRIO DE CRIAR ROTINA
+
+var contagemDispositivos = 0;
+var existeBotaoExcluir = false;
 var adicionarDispositivo = function(){
-    /*if (!botaoExcluirExiste){
-        var novoBotaoExcluir = `<button onclick="excluiUltimoDispositivo()" id="botao_exclui_dispositivo" type="delete" class="btn btn-sm btn-danger mb-2">+</button>
+    if (!existeBotaoExcluir){
+        var novoBotaoExcluir = `<button onclick="excluiUltimoDispositivo()" id="botao_exclui_dispositivo" type="delete" class="offset-sm-1 btn btn-sm btn-danger mb-2">+</button>
         <label for="botao_exclui_dispositivo">Excluir dispositivo</label>`;
-        document.getElementById('botoes').insertAdjacentHTML('afterend', novoBotaoExcluir)
-        botaoExcluirExiste = true;
+        document.getElementById('label_botao_seleciona_dispositivo').insertAdjacentHTML('afterend', novoBotaoExcluir)
+        existeBotaoExcluir = true;
     } 
-    var dispositivosAindaDisponiveis = "";
+    /*var dispositivosAindaDisponiveis = "";
     for(var d = 0; d < dispositivosDisponiveis.length; d++){
         dispositivosAindaDisponiveis.concat("<option>" + dispositivosDisponiveis[d] + "</option>")
     }*/
-
-    var dispositivoNovo = `<div class="row">                
+    event.preventDefault();
+    var dispositivoNovo = `<div class="row"">                
                                 <div class="form-group col-md-10 offset-md-1">
-                                    <label for="dispositivo">Dispositivos Disponíveis:</label>
+                                    <label for="dispositivo">(`+ (contagemDispositivos + 1) +`) Dispositivos Disponíveis:</label>
                                     <select class="form-control">
                                     <option>Lâmpada</option>     
                                     <option>TV</option>
@@ -69,6 +62,12 @@ var adicionarDispositivo = function(){
                                     </select>
                                 </div>      
                             </div> `;
-    //contagemDispositivos++;
+    contagemDispositivos++;
     document.getElementById('selecao_dispositivos').insertAdjacentHTML('beforeend', dispositivoNovo);
+}
+
+var excluiUltimoDispositivo = function(){
+    var filhos = document.getElementById("selecao_dispositivos");
+    filhos.removeChild(filhos[filhos.length - 1]);
+    contagemDispositivos--;
 }
