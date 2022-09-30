@@ -24,35 +24,28 @@ var abreNovoCampoAcao = function(){
     } ;
 }
 
-
-//var dispositivosDisponiveis = ["Lâmpada", "TV", "Ar Condicionado", "Rádio", "Câmera"]
-
-// TODO PASSAR DISPOSITIVOS DISPONÍVEIS PARA DENTRO DE UMA LISTA, REMOVER ITEMS CONFORME A LISTA É USADA
+var todosDispositivos = ["Lâmpada", "TV", "Ar Condicionado", "Rádio", "Câmera"]
 
 var contagemDispositivos = 0;
 var existeBotaoExcluir = false;
 var adicionarDispositivo = function(){
+    event.preventDefault();
     if (!existeBotaoExcluir){
         var novoBotaoExcluir = `<button onclick="excluiUltimoDispositivo()" id="botao_exclui_dispositivo" type="delete" class="offset-sm-1 btn btn-sm btn-danger mb-2">+</button>
         <label for="botao_exclui_dispositivo">Excluir dispositivo</label>`;
         document.getElementById('label_botao_seleciona_dispositivo').insertAdjacentHTML('afterend', novoBotaoExcluir)
         existeBotaoExcluir = true;
     } 
-    /*var dispositivosAindaDisponiveis = "";
-    for(var d = 0; d < dispositivosDisponiveis.length; d++){
-        dispositivosAindaDisponiveis.concat("<option>" + dispositivosDisponiveis[d] + "</option>")
-    }*/
-    event.preventDefault();
+
+    var dispositivosDisponiveis = "";
+    todosDispositivos.forEach((d) => dispositivosDisponiveis += ("<option>" + d +"</option>"));
+
     var dispositivoNovo = `<div class="row"">                
                                 <div class="form-group col-md-10 offset-md-1">
                                     <label for="dispositivo">(`+ (contagemDispositivos + 1) +`) Dispositivos Disponíveis:</label>
-                                    <select class="form-control">
-                                    <option>Lâmpada</option>     
-                                    <option>TV</option>
-                                    <option>Ar Condicionado</option>
-                                    <option>Radio</option>
-                                    <option>Camera </option>
-                                    </select>
+                                    <select class="form-control">` +
+                                    dispositivosDisponiveis +
+                                    `</select>
                                 </div>
                                 <div class="form-group col-md-10 offset-md-1 mb-4">
                                     <label for="acao">Selecione uma ação para o dispositivo escolhido:</label>
