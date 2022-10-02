@@ -14,18 +14,33 @@ var abreNovoCampoAcao = function(){
     var acionamento = document.getElementById('tipo-acionamento').value;    
         if (acionamento == 'horario'){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
-            <label for="certa_distancia">Informe o horário de disparo:</label>
-            <input type="datetime-local" class="form-control" id="certa_distancia" placeholder="">
+            <div class="row">
+                <div class="form-group col-md-8 mb-2">
+                    <label for="certa_distancia">⏰ Informe o horário do primeiro disparo:</label>
+                    <input type="datetime-local" class="form-control" id="certa_distancia" placeholder="">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="frequencia_acionamento">🔁 Frequência</label>
+                    <select class="form-control" id="frequencia_acionamento">
+                        <option value="">Apenas uma vez</option>     
+                        <option value="">Diariamente</option>
+                        <option value="">Apenas dias úteis</option>
+                        <option value="">Próximos 3 dias</option>
+                        <option value="">A cada 7 dias</option>
+                        <option value="">Personalizar... </option>
+                    </select>
+                </div>
+            </div>
         </div>`
         } else if(acionamento == 'distancia'){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
-            <label for="certa_distancia">Defina a distância (em metros) desejada de sua casa:</label>
-            <input type="number" class="form-control" id="certa_distancia" placeholder="">
+            <label for="certa_distancia">🛣️ Defina a distância (em metros) desejada de sua casa:</label>
+            <input type="number" class="form-control" id="certa_distancia" placeholder="50">
         </div>`
         } else if(acionamento == 'minutos'){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
-            <label for="certa_distancia">Defina a quantos minutos de sua casa:</label>
-            <input type="number" class="form-control" id="certa_distancia" placeholder="">
+            <label for="certa_distancia">⏱️ Defina a quantos minutos de sua casa:</label>
+            <input type="number" class="form-control" id="certa_distancia" placeholder="2">
         </div>`
     } ;
 } 
