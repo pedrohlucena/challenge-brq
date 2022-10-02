@@ -50,9 +50,15 @@
             <hr>
             <!--____________________________________________________________________-->
             <!-- CAMPO SE REPETE APÓS CLIQUE NO BOTÃO ABAIXO--> 
-            <div id="selecao_dispositivos" class="container"></div>             
-            <button onclick="adicionarDispositivo()" id="botao_seleciona_dispositivo" class="btn btn-sm btn-secondary mb-2">+</button>
-            <label for="botao_seleciona_dispositivo" id="label_botao_seleciona_dispositivo">Adicionar Dispositivo</label>      
+            <div id="selecao_dispositivos" class="container"></div>    
+            <div class="botoes row">
+              <div class="col col-md-5">
+                <button onclick="adicionarDispositivo()" id="botao_seleciona_dispositivo" class="btn btn-sm btn-secondary mb-2">+</button>
+                <label for="botao_seleciona_disposityivo" id="label_botao_seleciona_dispositivo">Adicionar Dispositivo</label>      
+              </div>
+              <div class="col col-md-5" id="botao_excluir">                
+              </div>
+            </div>    
           </form>
           <button type="submit" class="btn btn-success mt-4 disabled">Criar Rotina</button>
         </div>

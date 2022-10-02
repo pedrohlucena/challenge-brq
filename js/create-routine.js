@@ -2,13 +2,7 @@ var todosDispositivos = ["Ar Condicionado", "Câmera", "Lâmpada",  "Rádio", "T
 var dispositivosAindaDisponiveis = todosDispositivos.slice();
 var dispositivosSelecionados = [];
 var existeBotaoExcluir = false;
-var numeroDispositivos = 0;
-
-var criaBotaoExcluir = function(){
-    document.getElementById('botao_excluir').innerHTML = `<button onclick="excluiUltimoDispositivo()" id="botao_exclui_dispositivo" type="delete" class="offset-sm-1 btn btn-sm btn-danger mb-2">+</button>
-    <label for="botao_exclui_dispositivo">Excluir dispositivo</label>`;        
-    existeBotaoExcluir = true;    
-}
+var numeroCamposDispositivos = 0;
 
 var abreNovoCampoAcao = function(){
     var camposAcao = document.getElementById("campos_de_acao");
@@ -34,12 +28,18 @@ var abreNovoCampoAcao = function(){
             <input type="number" class="form-control" id="certa_distancia" placeholder="">
         </div>`
     } ;
-}
+} 
 
-var acrescentaLinhaHTMLDispositivo = function(){
+var criaBotaoExcluir = function(){ 
+    document.getElementById('botao_excluir').innerHTML = `<button onclick="excluiUltimoDispositivo()" id="botao_exclui_dispositivo" type="delete" class="offset-sm-1 btn btn-sm btn-danger mb-2">×</button>
+    <label for="botao_exclui_dispositivo" id="label_botao_excluir">Excluir dispositivo</label>`;        
+    existeBotaoExcluir = true;    
+} 
+
+var criaHTMLCamposDispositivos = function(){ // cria HTML para campos de dispositivos com a lista de dispositivosSelecionados
     var dispositivosHTML = "";
-    dispositivosAindaDisponiveis.forEach((d) => dispositivosHTML += `<option value="${dispositivosAindaDisponiveis.indexOf(d)}">${d}</option>`);
-    var novaLinhaDispositivo = `<div class="row" id="linha_dispositivo${dispositivosSelecionados.length}">                
+    dispositivosAindaDisponiveis.forEach((d, index) => dispositivosHTML += `<option value="${index}">${d}</option>`);
+    var linhaHTML = `<div class="row" id="linha_dispositivo${numeroCamposDispositivos}">                
                                     <div class="form-group col-md-5 offset-md-1">
                                         <label for="dispositivo"> 
                                             ${dispositivosAindaDisponiveis.length} Dispositivos Disponíveis:
@@ -54,34 +54,57 @@ var acrescentaLinhaHTMLDispositivo = function(){
                                         <option>Ligar</option>     
                                         <option>Desligar</option>
                                         </select>
-                                    </div>   
+                                    </div> 
                                 </div>`;
-    document.getElementById('selecao_dispositivos').insertAdjacentHTML('beforeend', novaLinhaDispositivo);
-}
-acrescentaLinhaHTMLDispositivo();
+    return linhaHTML;
+} 
+
+var acrescentaCamposDispositivos = function(){ // monta HTML com todas as opções de dispositivos
+    numeroCamposDispositivos++;
+    var campos = criaHTMLCamposDispositivos();
+    document.getElementById('selecao_dispositivos').insertAdjacentHTML('beforeend', campos);    
+} 
+acrescentaCamposDispositivos(); // já inicia a página com os campos para selecionar 1 dispositivo
 
 var adicionarDispositivo = function(){
     event.preventDefault();
     if (!existeBotaoExcluir){
-        //criaBotaoExcluir();
+        criaBotaoExcluir();
     }
     efetivarEscolha();
     if(dispositivosAindaDisponiveis.length === 0){
         document.getElementById("botao_seleciona_dispositivo").disabled = true;
         return;
     } 
-    acrescentaLinhaHTMLDispositivo();
-}
+    acrescentaCamposDispositivos();
+} 
 
 var efetivarEscolha = function(){   
-    var indiceDispositivo = parseInt(document.getElementById(`dispositivo${dispositivosSelecionados.length}`).value); 
-    var dispositivo = dispositivosAindaDisponiveis[indiceDispositivo]
+    var indiceDispositivo = parseInt(document.getElementById(`dispositivo${numeroCamposDispositivos - 1}`).value); 
+    var dispositivo = dispositivosAindaDisponiveis[indiceDispositivo];
     dispositivosSelecionados.push(dispositivo);
     dispositivosAindaDisponiveis.splice(indiceDispositivo, 1);
 }
 
 
 var excluiUltimoDispositivo = function(){
-
+    event.preventDefault();   
+    if(dispositivosSelecionados.length > 0 && numeroCamposDispositivos != 1){      
+        document.getElementById(`linha_dispositivo${numeroCamposDispositivos}`).remove();
+        numeroCamposDispositivos--;
+        dispositivosAindaDisponiveis.push(dispositivosSelecionados.pop());
+    } else {
+        document.getElementById("botao_exclui_dispositivo").remove();
+        document.getElementById("label_botao_excluir").remove();
+        existeBotaoExcluir = false;
+    }
+         
+    if(dispositivosAindaDisponiveis.length > 0) {
+        document.getElementById("botao_seleciona_dispositivo").disabled = false;
+    }
+    dispositivosAindaDisponiveis.sort();
+    console.log("SELECIONADOS: " + dispositivosSelecionados)
+    console.log("DISPONÍVEIS: " + dispositivosAindaDisponiveis)
+    console.log(dispositivosAindaDisponiveis.length)
 }
 
