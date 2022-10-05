@@ -1,16 +1,52 @@
 .background {
-    background-color: #15161A;
+    background-color: #15161A !important;
 }
 
  /* The side navigation menu */
  .sidebar {
      margin: 0;
      background-color: #15161A;
-     display: flex !important;
+     display: inline-flex !important;
      flex-direction: column;
      justify-content: space-around;
      align-items: center;
-     /* overflow: auto; */
+ }
+
+.side-button {
+   background-color: #15161A;
+   background-size: cover;
+   border: none;
+   margin: 1vw;
+}
+
+ .journey-list {
+   background-color: #15161A;
+   border: #ED8B00;
+   display: inline-block !important;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .journey-button {
+   margin: 1vw;
+   padding: 1vw;
+   background-color: #15161A;
+   border-color: #ED8B00;
+   color:#ED8B00;
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 1.75vw;
+ }
+
+ .journey-button:hover {
+   background-color: #ED8B00;
+   color:#15161A;
+ }
+
+ .journey-button:active, .journey-button:focus {
+   outline: none !important;
+   box-shadow: none !important;
  }
 
  .map {
@@ -19,13 +55,14 @@
     border: 0;
     filter: invert(95%);
     display: block;
-
  }
+
  .map-container {
     margin: 0;
     padding: 0;
     border: 0;
  }
+
  .widgets {
     margin: 0;
     padding: 0;
@@ -37,4 +74,13 @@
  .img-button {
     max-width: 100%;
     height: auto;
+ }
+
+ .camera-screens {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   width: 100%;
+   height: 30%;
+   justify-content: space-evenly;
  }
