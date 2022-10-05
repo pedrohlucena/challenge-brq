@@ -19,7 +19,7 @@
   margin: 1vw;
 }
 
-.journey-list {
+.routine-list {
   background-color: #15161A;
   border: #ED8B00;
   display: inline-block !important;
@@ -27,7 +27,7 @@
   justify-content: center;
 }
 
-.journey-button {
+.routine-button {
   margin: 1vw;
   padding: 1vw;
   background-color: #15161A;
@@ -39,9 +39,9 @@
   font-size: 1.75vw;
 }
 
-.journey-button:hover,
-.journey-button:active,
-.journey-button:focus {
+.routine-button:hover,
+.routine-button:active,
+.routine-button:focus {
   background-color: #ED8B00;
   color: #15161A;
   outline: none !important;
