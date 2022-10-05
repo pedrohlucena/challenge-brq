@@ -76,11 +76,20 @@
     height: auto;
  }
 
- .camera-screens {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   width: 100%;
-   height: 30%;
-   justify-content: space-evenly;
+ .widget-bar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 30%;
+  justify-content: center;
+ }
+
+ .demo-box {
+  justify-content: center;
+ }
+
+ .demo {
+  width: 350px;
+  height: auto;
  }
