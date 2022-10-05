@@ -4,12 +4,12 @@
 
  /* The side navigation menu */
  .sidebar {
-     margin: 0;
-     background-color: #15161A;
-     display: inline-flex !important;
-     flex-direction: column;
-     justify-content: space-around;
-     align-items: center;
+   margin: 0;
+   background-color: #15161A;
+   display: inline-flex !important;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
  }
 
 .side-button {

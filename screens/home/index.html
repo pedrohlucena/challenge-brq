@@ -17,28 +17,28 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous" defer></script>
     <!-- Custom (Vanilla) CSS -->
-    <link href="../../assets/css/navigation.css" rel="stylesheet">
+    <link href="../../assets/css/index.css" rel="stylesheet">
 </head>
 <body class="background">
     <div class="container-fluid min-vh-100 d-flex flex-column">
-        <div class="row flex-grow-1">
+        <div class="row">
             <div class="col-2 sidebar">
-                <button class="side-button"><img class="img-button" src="../../assets/images/back.svg"></button>
-                <button class="side-button"><img class="img-button" src="../../assets/images/agenda.svg"></button>
-                <button class="side-button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/back.svg"></a>
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/agenda.svg"></a>
+                <a class="side-button d-block my-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                     <img class="img-button" src="../../assets/images/journey.svg">
-                </button>
+                </a>
                 <div class="collapse" id="collapseExample">
                     <div class="journey-list">
                         <a class="btn journey-button" href="#">Chegando do trabalho</a>
                         <a class="btn journey-button" href="#">Saindo de casa</a>
                         <a class="btn journey-button" href="#">Dias Quentes</a>
-                        <a class="btn journey-button" href="#">+ Criar nova Rotina...</a>
+                        <a class="btn journey-button" href="../list-of-rotines/index.html">Ver mais Rotinas...</a>
                     </div>
                 </div>
-                <button class="side-button"><img class="img-button" src="../../assets/images/garage.svg"></button>
-                <button class="side-button"><img class="img-button" src="../../assets/images/camera.svg"></button>
-                <button class="side-button"><img class="img-button" src="../../assets/images/settings.svg"></button>
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/garage.svg"></a>
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/camera.svg"></a>
+                <a href="../app_configuration/index.html" class="side-button"><img class="img-button" src="../../assets/images/settings.svg"></a>
             </div>
             <div class="col-10 map-container">
                 <iframe class="map"
