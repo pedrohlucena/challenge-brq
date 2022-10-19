@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/navigation.svg">
+    <title>Navegação</title>
+    <!-- Fontes (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        defer></script>
+    <!-- Custom (Vanilla) CSS -->
+    <link href="../../assets/css/index.css" rel="stylesheet">
+</head>
+
+<body class="background">
+    <div class="container-fluid min-vh-100 d-flex flex-column">
+        <div class="row flex-grow-1">
+            <div class="col-2 sidebar">
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/back.svg"></a>
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/agenda.svg"></a>
+                <a class="side-button d-block my-2" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <img class="img-button" src="../../assets/images/routine.svg">
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="routine-list">
+                        <a class="btn routine-button" href="#">Chegando do trabalho</a>
+                        <a class="btn routine-button" href="#">Saindo de casa</a>
+                        <a class="btn routine-button" href="#">Dias Quentes</a>
+                        <a class="btn routine-button" href="../list-of-rotines/index.html">Ver mais Rotinas...</a>
+                    </div>
+                </div>
+                <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/garage-locked.svg"></a>
+                <a class="side-button d-block my-2" href="index.html"><img class="img-button" src="../../assets/images/camera.svg"></a>
+                <a href="../app_configuration/index.html" class="side-button"><img class="img-button"
+                        src="../../assets/images/settings.svg"></a>
+            </div>
+            <div class="col-10 side-container">
+                <div class="demo-box text-center">
+                    <img class="demo " src="../../assets/images/camera2.gif">
+                </div>
+                <!-- Widgets -->
+                <div class="container-fluid background ps-0 pe-0 py-0 mb-4">
+                    <div class="row d-flex widget-bar">                        
+                        <div class="col-12 col-sm-4 col-xl-4 d-flex demo-box">
+                            <img class="img-fluid demo" src="../../assets/images/camera1.gif">
+                        </div>
+                        <div class="col-12 col-sm-4 col-xl-4 d-flex demo-box">
+                            <img class="img-fluid demo" src="../../assets/images/camera2.gif">
+                        </div>
+                        <div class="col-12 col-sm-4 col-xl-4 d-flex demo-box">
+                            <img class="img-fluid demo" src="../../assets/images/camera2.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
