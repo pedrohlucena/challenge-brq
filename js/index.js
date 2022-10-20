@@ -1,17 +1,17 @@
 function limparInput() {
 
-    var elements = [] ;
+    let elements = [] ;
     elements = document.getElementsByClassName("form-control");
 
-    for(var i=0; i<elements.length ; i++){
+    for(let i=0; i<elements.length ; i++){
        elements[i].value = "" ;
     }
 
 }
 
 
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
 })
 
@@ -32,3 +32,15 @@ $('.owl-carousel').owlCarousel({
       }
   }
 })
+
+let carouselOn = true;
+var changeCarouselvisibility = function(){
+    if(carouselOn){
+        document.getElementById("carrosel").setAttribute("style", "display: none");
+        carouselOn = false;
+    } else {
+        document.getElementById("carrosel").setAttribute("style", "display: block");
+        carouselOn = true;
+    }
+    
+}
