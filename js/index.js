@@ -18,7 +18,7 @@ let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 
 $('.owl-carousel').owlCarousel({
   loop:true,
-  margin:10,
+  margin:30,
   nav:true,
   responsive:{
       0:{
@@ -27,19 +27,22 @@ $('.owl-carousel').owlCarousel({
       600:{
           items:3
       },
-      1000:{
-          items:4
+      1500:{
+        items:4
       }
   }
 })
 
 let carouselOn = true;
+
 var changeCarouselvisibility = function(){
     if(carouselOn){
         document.getElementById("carrosel").setAttribute("style", "display: none");
+        document.getElementById("botao-camera").setAttribute("src", "../../assets/images/camera.svg");        
         carouselOn = false;
     } else {
         document.getElementById("carrosel").setAttribute("style", "display: block");
+        document.getElementById("botao-camera").setAttribute("src", "../../assets/images/camera-on.svg");    
         carouselOn = true;
     }
     
