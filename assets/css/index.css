@@ -4,3 +4,34 @@
 @import url('./input.css');
 @import url('./colors.css');
 @import url('./navigation.css');
+
+.top-right{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+ul.lista-favoritos {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .owl-carousel{
+    position: absolute;
+    bottom: -60px;
+    right: 5px;
+  }
+
+.carousel-img{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3%;
+    border-color: rgba(231, 231, 231, 0.877);
+}
+
+  #carrosel{
+    position: relative;
+  }
+
+ 
