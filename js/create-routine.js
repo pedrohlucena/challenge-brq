@@ -1,5 +1,7 @@
-let dispositivosAindaDisponiveis = ["Ar Condicionado", "Câmera", "Caixa de Som" , "Lâmpada", "Rádio", "TV"];
-let dispositivosSelecionados = [];
+let dispositivosAindaDisponiveis = [ "Ar condicionado LG Dual Inverter Compact", 
+"Câmera Externa Smart Intelbras iM5 SC", "Caixa de Som Bluetooth JBL Boombox" , 
+"Lâmpada LED Philips Amarela 4.5W - Quarto 1", "Lâmpada LED Philips Branca 4.5W - Quarto 2", "Lâmpada Eletrônica Ourolux 15W - Cozinha",
+'Smart TV LED PRO 43" Full HD LG 43LM631C0SB', "Smart Speaker Amazon Echo Dot 3ª Geração com Alexa"];let dispositivosSelecionados = [];
 let existeBotaoExcluir = false;
 let numeroCamposDispositivos = 0;
 
