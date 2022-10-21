@@ -1,0 +1,60 @@
+@import url('./text.css');
+@import url('./general.css');
+@import url('./buttons.css');
+@import url('./input.css');
+@import url('./colors.css');
+@import url('./navigation.css');
+
+
+#discreta{
+  width:20px;
+  height:20px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+
+#discreta:hover {
+  background: #a3a3a3;
+  background-image: -webkit-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -moz-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -ms-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -o-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: linear-gradient(to bottom, #a3a3a3, #3b3b3b);
+  text-decoration: none;
+}
+
+.top-right{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+ul.lista-favoritos {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .owl-carousel{
+    position: absolute;
+    bottom: -60px;
+    right: 5px;
+  }
+
+.carousel-img{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 2%;
+    border-color: #33353B; /*rgba(0, 0, 0, 0.877);*/
+}
+
+  #carrosel{
+    position: relative;  
+  }
+
+  .main-row{
+    margin-top: 2%;
+    height: 60%;
+  }
+  
