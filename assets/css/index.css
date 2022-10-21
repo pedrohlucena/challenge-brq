@@ -5,6 +5,25 @@
 @import url('./colors.css');
 @import url('./navigation.css');
 
+
+#discreta{
+  width:20px;
+  height:20px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+
+#discreta:hover {
+  background: #a3a3a3;
+  background-image: -webkit-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -moz-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -ms-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: -o-linear-gradient(top, #a3a3a3, #3b3b3b);
+  background-image: linear-gradient(to bottom, #a3a3a3, #3b3b3b);
+  text-decoration: none;
+}
+
 .top-right{
     position: absolute;
     top: 40px;
@@ -33,3 +52,5 @@ ul.lista-favoritos {
   #carrosel{
     position: relative;  
   }
+
+  
