@@ -1,0 +1,23 @@
+{
+  "name": "challenge-brq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrohlucena/challenge-brq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrohlucena/challenge-brq/issues"
+  },
+  "homepage": "https://github.com/pedrohlucena/challenge-brq#readme",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
