@@ -53,4 +53,8 @@ ul.lista-favoritos {
     position: relative;  
   }
 
+  .main-row{
+    margin-top: 2%;
+    height: 60%;
+  }
   

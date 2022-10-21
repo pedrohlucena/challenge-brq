@@ -20,6 +20,7 @@
         defer></script>
     <!-- Navigation JS -->
     <script src="../../js/index.js" defer></script>
+    <script src="../../js/cameras.js" defer></script>
     <!-- Custom (Vanilla) CSS -->
     <link href="../../assets/css/index.css" rel="stylesheet">
 </head>
@@ -50,18 +51,18 @@
             <div class="col-10 camera-screen">
                 <div class="row main-row">
                     <div class="main-camera-box d-flex">
-                        <img class="camera img-fluid" src="../../assets/images/camera1.gif">
+                        <img class="camera img-fluid" id="camera-principal" src="../../assets/images/camera2.gif">
                     </div>
                 </div>
                 <div class="row secondary-row">
                     <div class="col-4 p-3 p-xl-5">
-                        <img class="camera img-fluid" src="../../assets/images/camera2.gif">
+                        <img class="camera img-fluid" id="camera-slot-1" src="../../assets/images/camera4.gif" onclick="changeSlotToPrincipal(1)">
                     </div>
                     <div class="col-4 p-3 p-xl-5">
-                        <img class="camera img-fluid" src="../../assets/images/camera3.gif">
+                        <img class="camera img-fluid" id="camera-slot-2" src="../../assets/images/camera3.gif" onclick="changeSlotToPrincipal(2)">
                     </div>
                     <div class="col-4 p-3 p-xl-5">
-                        <img class="camera img-fluid" src="../../assets/images/camera4.gif">
+                        <img class="camera img-fluid" id="camera-slot-3" src="../../assets/images/camera1.gif" onclick="changeSlotToPrincipal(3)">
                     </div>
                 </div>
             </div>
