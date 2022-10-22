@@ -114,6 +114,7 @@
 .camera {
     height: auto;
     width: auto;
+    border-radius: 5%;
 }
 
 .secondary-row {
@@ -126,3 +127,13 @@
     justify-content: center;
     align-items: center;
 }
+
+#camera-principal {
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: #ED8B00;
+}
+
+h3 {
+    
+    }
