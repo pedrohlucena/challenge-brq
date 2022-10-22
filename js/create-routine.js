@@ -124,3 +124,18 @@ let excluiUltimoDispositivo = function(){
     console.log(dispositivosAindaDisponiveis.length)
 }
 
+// function habilitarBotaoCriarRotina() {
+//     const nomeRotinaInput = document.getElementById("nome-rotina");
+
+//     const criarRotinaBotao = document.getElementById("botao-criar-rotina");
+
+//     let condicoesSatisfeitas = true
+
+//     if(nomeRotinaInput.value.length === 0) {
+//         condicoesSatisfeitas = condicoesSatisfeitas && false
+//     }
+    
+//     if(nomeRotinaInput.value.length === 0) {
+//         condicoesSatisfeitas = condicoesSatisfeitas && false
+//     }
+// }
