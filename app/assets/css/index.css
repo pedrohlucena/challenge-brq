@@ -58,3 +58,11 @@ ul.lista-favoritos {
     height: 60%;
   }
   
+#locais-disponiveis{
+  min-width: 30%;
+  margin-top: 18px;
+  position: absolute;
+  top: 60px;
+  right: 40px
+}
+

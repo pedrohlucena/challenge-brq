@@ -1,3 +1,13 @@
+const triggerTabList = document.querySelectorAll('#pills-tab button')
+triggerTabList.forEach(triggerEl => {
+  const tabTrigger = new coreui.Tab(triggerEl)
+
+  triggerEl.addEventListener('click', event => {
+    event.preventDefault()
+    tabTrigger.show()
+  })
+})
+
 function limparInput() {
 
     let elements = [] ;
@@ -8,7 +18,6 @@ function limparInput() {
     }
 
 }
-
 
 let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
