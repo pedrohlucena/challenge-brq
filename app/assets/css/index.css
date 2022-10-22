@@ -66,3 +66,9 @@ ul.lista-favoritos {
   right: 40px
 }
 
+#lista-rotinas{
+  position: absolute;
+  top: 28%;
+  left: 18%;
+  width: 22%;
+}
