@@ -97,6 +97,7 @@
 
 .camera-screen {
     box-shadow: inset 1px 0px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 4%;
 }
 
 .main-row {
@@ -111,6 +112,12 @@
     align-items: center;
 }
 
+.main-camera-box > img {
+    margin-top: -7%;
+    width: 98%;
+    height: 96%;
+}
+
 .camera {
     height: auto;
     width: auto;
@@ -119,6 +126,7 @@
 
 .secondary-row {
     height: 30%;
+    margin-top: 4%;
 }
 
 .secondary-camera-box {
