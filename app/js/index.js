@@ -1,13 +1,3 @@
-const triggerTabList = document.querySelectorAll('#pills-tab button')
-triggerTabList.forEach(triggerEl => {
-  const tabTrigger = new coreui.Tab(triggerEl)
-
-  triggerEl.addEventListener('click', event => {
-    event.preventDefault()
-    tabTrigger.show()
-  })
-})
-
 function limparInput() {
 
     let elements = [] ;
@@ -28,6 +18,7 @@ function showListOfRoutines(){
         document.getElementById("lista-rotinas").hidden = true;
         routinesAreHidden = true; 
     }    
+    fechaCarrossel();
 }
 
 $('.owl-carousel').owlCarousel({
