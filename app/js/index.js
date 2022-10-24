@@ -19,6 +19,17 @@ function limparInput() {
 
 }
 
+let routinesAreHidden = true;
+function showListOfRoutines(){
+    if (routinesAreHidden){
+        document.getElementById("lista-rotinas").hidden = false;
+        routinesAreHidden = false; 
+    } else {
+        document.getElementById("lista-rotinas").hidden = true;
+        routinesAreHidden = true; 
+    }    
+}
+
 $('.owl-carousel').owlCarousel({
   loop:true,
   margin:30,

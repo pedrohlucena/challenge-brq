@@ -41,7 +41,7 @@
                 <div class="col-2 sidebar">
                     <a class="side-button d-block my-2" id="link-seta-retorno"><img class="img-button" id="img-seta-retorno" src="../../assets/images/back.svg"></a>
                     <a class="side-button d-block my-2"><img class="img-button" src="../../assets/images/agenda.svg"></a>                    
-                    <a class="side-button d-block my-2" data-target="#lista-rotinas" data-toggle="collapse" href="#lista-rotinas" role="button">
+                    <a class="side-button d-block my-2" role="button" onclick="showListOfRoutines()">
                         <img class="img-button" src="../../assets/images/rotinas.svg"> <!--routine.svg-->
                     </a>                    
                     <!-- <div class="collapse" id="collapseExample">
@@ -67,7 +67,7 @@
                     width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
 
-                    <div id="lista-rotinas" class="">  
+                    <div id="lista-rotinas" class="" hidden>  
                         <div class="card bg-dark text-white">
                             <div class="card-body">
                                 <h4 class="card-title">Lista de Rotinas</h4>
