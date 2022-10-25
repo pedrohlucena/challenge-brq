@@ -17,12 +17,12 @@ let abreNovoCampoAcao = function(){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
             <div class="row">
                 <div class="form-group col-md-8 mb-2">
-                    <label for="certa_distancia">⏰ Informe o horário de disparo da rotina:</label>
-                    <input type="datetime-local" class="form-control" id="certa_distancia" placeholder="">
+                    <label for="certo_horario">⏰ Informe o horário de disparo da rotina:</label>
+                    <input type="datetime-local" class="form-control" id="certo_horario" placeholder="" onblur="habilitarBotaoCriarRotina()">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="frequencia_acionamento">🔁 Frequência</label>
-                    <select class="form-control" id="frequencia_acionamento">
+                    <select class="form-control" id="frequencia_acionamento" onblur="habilitarBotaoCriarRotina()">
                         <option value="">Apenas uma vez</option>     
                         <option value="">Diariamente</option>
                         <option value="">Apenas dias úteis</option>
@@ -36,12 +36,12 @@ let abreNovoCampoAcao = function(){
         } else if(acionamento == 'distancia'){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
             <label for="certa_distancia">🛣️ Defina a que distância de sua casa a rotina deve ser acionada (em metros):</label>
-            <input type="number" class="form-control" id="certa_distancia" placeholder="50">
+            <input type="number" class="form-control" id="certa_distancia" placeholder="50" onblur="habilitarBotaoCriarRotina()">
         </div>`
         } else if(acionamento == 'minutos'){
             document.getElementById('campos_de_acao').innerHTML = `<div class="form-group col-md-10 offset-md-1 mb-4">
-            <label for="certa_distancia">⏱️ Defina a quanto tempo de sua casa a rotina deve ser acionada (em minutos)</label>
-            <input type="number" class="form-control" id="certa_distancia" placeholder="2">
+            <label for="certos_minutos">⏱️ Defina a quanto tempo de sua casa a rotina deve ser acionada (em minutos)</label>
+            <input type="number" class="form-control" id="certos_minutos" placeholder="2" onblur="habilitarBotaoCriarRotina()">
         </div>`
     } ;
 } 
@@ -60,13 +60,13 @@ let criaHTMLCamposDispositivos = function(){ // cria HTML para campos de disposi
                                         <label for="dispositivo"> 
                                             ${dispositivosAindaDisponiveis.length} Dispositivos Disponíveis:
                                         </label>
-                                        <select class="form-control" id="dispositivo${dispositivosSelecionados.length}">
+                                        <select class="form-control" id="dispositivo${dispositivosSelecionados.length}" onblur="habilitarBotaoCriarRotina()">
                                             ${dispositivosHTML} 
                                         </select>
                                     </div>
                                     <div class="form-group col-md-5 mb-4">
                                         <label for="acao">🔧Selecione uma ação:</label>
-                                        <select class="form-control" >
+                                        <select class="form-control" onblur="habilitarBotaoCriarRotina()">
                                         <option>Ligar</option>     
                                         <option>Desligar</option>
                                         </select>
@@ -124,18 +124,47 @@ let excluiUltimoDispositivo = function(){
     console.log(dispositivosAindaDisponiveis.length)
 }
 
-// function habilitarBotaoCriarRotina() {
-//     const nomeRotinaInput = document.getElementById("nome-rotina");
+function habilitarBotaoCriarRotina() {
+    const criarRotinaBotao = document.getElementById("botao-criar-rotina");
 
-//     const criarRotinaBotao = document.getElementById("botao-criar-rotina");
-
-//     let condicoesSatisfeitas = true
-
-//     if(nomeRotinaInput.value.length === 0) {
-//         condicoesSatisfeitas = condicoesSatisfeitas && false
-//     }
+    const nomeRotinaInput = document.getElementById("nome-rotina");
+    const horarioDisparoRotinaInput = document.getElementById("certo_horario");
+    const distanciaDisparoRotinaInput = document.getElementById("certa_distancia");
+    const minutosCasaDisparoRotinaInput = document.getElementById("certos_minutos");
     
-//     if(nomeRotinaInput.value.length === 0) {
-//         condicoesSatisfeitas = condicoesSatisfeitas && false
-//     }
-// }
+    let condicoesSatisfeitas = true
+
+    if(nomeRotinaInput.value.length === 0) {
+        condicoesSatisfeitas = condicoesSatisfeitas && false
+    }
+
+    if(horarioDisparoRotinaInput && horarioDisparoRotinaInput.value.length === 0) {
+        condicoesSatisfeitas = condicoesSatisfeitas && false
+    }
+
+    if(distanciaDisparoRotinaInput && 5 > +(distanciaDisparoRotinaInput.value)) {
+        condicoesSatisfeitas = condicoesSatisfeitas && false
+    }
+
+    if(minutosCasaDisparoRotinaInput) {
+        const minutosParaDisparoRotina = parseInt(minutosCasaDisparoRotinaInput.value)
+        
+        if(isNaN(minutosParaDisparoRotina)) {
+            condicoesSatisfeitas = condicoesSatisfeitas && false
+        }
+    
+        if(1 > minutosParaDisparoRotina) {
+            condicoesSatisfeitas = condicoesSatisfeitas && false
+        }
+    }
+
+    if(condicoesSatisfeitas) {
+        if(criarRotinaBotao.classList.contains('disabled')) {
+            criarRotinaBotao.classList.replace('disabled', 'enabled')
+        }
+    } else {
+        if(criarRotinaBotao.classList.contains('enabled')) {
+            criarRotinaBotao.classList.replace('enabled', 'disabled')
+        }
+    }
+}
