@@ -9,12 +9,17 @@ function limparInput() {
 
 }
 
-
-let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-})
-
+let routinesAreHidden = true;
+function showListOfRoutines(){
+    if (routinesAreHidden){
+        document.getElementById("lista-rotinas").hidden = false;
+        routinesAreHidden = false; 
+    } else {
+        document.getElementById("lista-rotinas").hidden = true;
+        routinesAreHidden = true; 
+    }    
+    fechaCarrossel();
+}
 
 $('.owl-carousel').owlCarousel({
   loop:true,
@@ -35,7 +40,7 @@ $('.owl-carousel').owlCarousel({
 
 
 let carouselOn = true;
-var changeCarouselvisibility = function(){
+let changeCarouselvisibility = function(){
     if(carouselOn){
         document.getElementById("carrosel").setAttribute("style", "display: none");
         document.getElementById("botao-camera").setAttribute("src", "../../assets/images/camera.svg");        
@@ -46,13 +51,13 @@ var changeCarouselvisibility = function(){
         carouselOn = true;
     }    
 }
-var fechaCarrossel = function(){
+let fechaCarrossel = function(){
     if(carouselOn){
         changeCarouselvisibility();
     }
 }
 
-var mostraPostosProximos = function(){
+let mostraPostosProximos = function(){
     document.getElementById("iframe-index").src = "https://maps.google.com/maps?q=pinheiros,%20postos%20de%20gasolina&t=&z=13&ie=UTF8&iwloc=&output=embed";
     document.getElementById("img-seta-retorno").src = "../../assets/images/retorno-on.svg";
     document.getElementById("link-seta-retorno").href = "../home/index.html";
